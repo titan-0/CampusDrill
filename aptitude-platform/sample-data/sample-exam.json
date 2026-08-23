@@ -1,0 +1,92 @@
+{
+  "examTitle": "Sample Aptitude Test",
+  "durationMinutes": 5,
+  "negativeMarking": { "enabled": true, "marksPerWrong": 0.25 },
+  "sections": [
+    {
+      "sectionName": "Quantitative Aptitude",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "A shopkeeper marks up an item by 20% and then gives a 10% discount. What is his net profit percentage?",
+          "options": [
+            { "id": "a", "text": "8%" },
+            { "id": "b", "text": "10%" },
+            { "id": "c", "text": "12%" },
+            { "id": "d", "text": "20%" }
+          ],
+          "correctOptionId": "a",
+          "explanation": "Net % = 20 - 10 - (20×10/100) = 8%",
+          "marks": 1,
+          "difficulty": "medium",
+          "topic": "Profit and Loss"
+        },
+        {
+          "id": "q2",
+          "question": "Find the next number in the series: 2, 6, 12, 20, 30, ?",
+          "options": [
+            { "id": "a", "text": "40" },
+            { "id": "b", "text": "42" },
+            { "id": "c", "text": "36" },
+            { "id": "d", "text": "44" }
+          ],
+          "correctOptionId": "b",
+          "explanation": "Differences are 4, 6, 8, 10, 12 → 30 + 12 = 42",
+          "marks": 1,
+          "difficulty": "easy",
+          "topic": "Number Series"
+        },
+        {
+          "id": "q3",
+          "question": "A train 150 m long crosses a stationary pole in 15 seconds. What is the speed of the train?",
+          "options": [
+            { "id": "a", "text": "10 m/s" },
+            { "id": "b", "text": "15 m/s" },
+            { "id": "c", "text": "36 km/h" },
+            { "id": "d", "text": "Both A and C" }
+          ],
+          "correctOptionId": "d",
+          "explanation": "Speed = 150/15 = 10 m/s = 10 × 3.6 = 36 km/h. Both A and C are correct.",
+          "marks": 1,
+          "difficulty": "easy",
+          "topic": "Time and Distance"
+        }
+      ]
+    },
+    {
+      "sectionName": "Logical Reasoning",
+      "questions": [
+        {
+          "id": "q4",
+          "question": "All roses are flowers. Some flowers fade quickly. Therefore:",
+          "options": [
+            { "id": "a", "text": "All roses fade quickly" },
+            { "id": "b", "text": "Some roses may fade quickly" },
+            { "id": "c", "text": "No roses fade quickly" },
+            { "id": "d", "text": "All flowers are roses" }
+          ],
+          "correctOptionId": "b",
+          "explanation": "Since only some flowers fade quickly, we can only conclude that some roses MAY fade quickly.",
+          "marks": 1,
+          "difficulty": "medium",
+          "topic": "Syllogisms"
+        },
+        {
+          "id": "q5",
+          "question": "If BOOK is coded as 2315, how is COOK coded?",
+          "options": [
+            { "id": "a", "text": "3315" },
+            { "id": "b", "text": "3215" },
+            { "id": "c", "text": "2315" },
+            { "id": "d", "text": "3115" }
+          ],
+          "correctOptionId": "a",
+          "explanation": "B=2, O=15(1+5), O=15, K=11 → wait, simpler: B→2, O→15, O→15, K→11. C is one letter after B so C→3. COOK = 3315.",
+          "marks": 1,
+          "difficulty": "hard",
+          "topic": "Coding-Decoding"
+        }
+      ]
+    }
+  ]
+}
