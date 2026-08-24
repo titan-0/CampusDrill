@@ -2,6 +2,13 @@ import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
 import { NormalizedExam, Question } from '../lib/schema'
 
+function setPath(path: string) {
+  if (typeof window === 'undefined') return
+  if (window.location.pathname === path) return
+  window.history.pushState({}, '', path)
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
 // ─── Types ─────────────────────────────────────────────────────────────────────
 
 export type QuestionStatus =
@@ -73,7 +80,10 @@ export const useTestStore = create<TestStore>()(
       ...defaultSession,
 
       // ── Navigate to app (from landing page) ────────────────────────────────
-      goToApp: () => set({ view: 'import' }),
+      goToApp: () => {
+        setPath('/app')
+        set({ view: 'import' })
+      },
 
       // ── Load exam (import screen → store) ──────────────────────────────────
       loadExam: (exam) => {
@@ -190,6 +200,7 @@ export const useTestStore = create<TestStore>()(
 
       // ── Go home (full reset → back to landing) ──────────────────────────────
       goHome: () => {
+        setPath('/')
         set({
           view: 'landing',
           exam: null,
