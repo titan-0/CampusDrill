@@ -11,7 +11,7 @@ export type QuestionStatus =
   | 'marked'
   | 'marked-answered'
 
-export type View = 'import' | 'test' | 'result'
+export type View = 'landing' | 'import' | 'test' | 'result'
 
 // ─── Store interface ────────────────────────────────────────────────────────────
 
@@ -35,6 +35,7 @@ interface TestStore {
   timeTakenSeconds: number
 
   // ── Actions ──
+  goToApp: () => void
   loadExam: (exam: NormalizedExam) => void
   startTest: () => void
   setAnswer: (questionId: string, optionId: string) => void
@@ -66,10 +67,13 @@ const defaultSession = {
 export const useTestStore = create<TestStore>()(
   persist(
     (set, get) => ({
-      view: 'import',
+      view: 'landing',
       exam: null,
       allQuestions: [],
       ...defaultSession,
+
+      // ── Navigate to app (from landing page) ────────────────────────────────
+      goToApp: () => set({ view: 'import' }),
 
       // ── Load exam (import screen → store) ──────────────────────────────────
       loadExam: (exam) => {
@@ -184,10 +188,10 @@ export const useTestStore = create<TestStore>()(
         get().startTest()
       },
 
-      // ── Go home (full reset) ─────────────────────────────────────────────────
+      // ── Go home (full reset → back to landing) ──────────────────────────────
       goHome: () => {
         set({
-          view: 'import',
+          view: 'landing',
           exam: null,
           allQuestions: [],
           ...defaultSession,
