@@ -74,7 +74,7 @@ Rules:
 - correctOptionId must exactly match an option "id" in that question.
 - All question ids must be unique (q1, q2, q3 ...).
 - Include a clear explanation for every question.
-- durationMinutes should be roughly ${Math.ceil(count * 1.5)} (1.5 min per question).`
+- durationMinutes should be roughly ${Math.ceil(count * 1)} (1 min per question).`
 }
 
 // ─── Sample JSON schema for copy/download ──────────────────────────────────────
